@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurApproach: React.FC = () => {
   return (
-    <section id="why-we-are-different" className="section-padding bg-pure-white">
+    <section id="ourApproach" className="section-padding bg-pure-white">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

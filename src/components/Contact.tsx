@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -8,6 +10,8 @@ const Contact: React.FC = () => {
     phone: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -18,14 +22,41 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // EmailJS configuration using environment variables
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    // Validate environment variables
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS environment variables are not configured');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    emailjs.sendForm(serviceId, templateId, form.current!, publicKey)
+      .then((result) => {
+        console.log('SUCCESS!', result.text);
+        setSubmitStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+      })
+      .catch((error) => {
+        console.log('FAILED...', error.text);
+        setSubmitStatus('error');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
     <section id="contact" className="relative overflow-hidden bg-grey-lighter/30 py-20">
+
+      
       <div className="container-custom">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -100,7 +131,7 @@ const Contact: React.FC = () => {
                   Need help with your project?
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-navy-black mb-2">
@@ -181,11 +212,43 @@ const Contact: React.FC = () => {
                     ></textarea>
                   </div>
                   
+                  {/* Hidden timestamp field */}
+                  <input
+                    type="hidden"
+                    name="time"
+                    value={new Date().toLocaleString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                      timeZoneName: 'short'
+                    })}
+                  />
+                  
+                  {/* Status Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                      Thank you! We'll get back to you within 24 hours.
+                    </div>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">
+                      Something went wrong. Please try again or contact us directly.
+                    </div>
+                  )}
+                  
                   <button
                     type="submit"
-                    className="w-full bg-sky-blue hover:bg-dark-sky-blue text-pure-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 uppercase tracking-wide"
+                    disabled={isSubmitting}
+                    className={`w-full font-semibold py-4 px-6 rounded-lg transition-colors duration-200 uppercase tracking-wide ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-sky-blue hover:bg-dark-sky-blue'
+                    } text-pure-white`}
                   >
-                    Submit
+                    {isSubmitting ? 'Sending...' : 'Submit'}
                   </button>
                 </form>
               </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const [showAI, setShowAI] = useState(false);
@@ -28,37 +29,55 @@ const Hero: React.FC = () => {
             <span 
               className={`transition-all duration-1000 ease-out ${
                 showAI 
-                  ? 'opacity-100 translate-x-0' 
+                  ? 'opacity-100 translate-x-0 text-[#0090FF]' 
                   : 'opacity-0 -translate-x-8'
-              }`}
+              } ${showDifferent ? 'text-[#001A29]' : ''}`}
             >
               AI
             </span>
             <span 
               className={`transition-all duration-1000 ease-out ${
                 showBuilt 
-                  ? 'opacity-100 translate-x-0' 
+                  ? 'opacity-100 translate-x-0 text-[#0077D1]' 
                   : 'opacity-0 -translate-x-8'
-              }`}
+              } ${showDifferent ? 'text-[#001A29]' : ''}`}
             >
               Built
             </span>
             <span 
               className={`transition-all duration-1000 ease-out ${
                 showDifferent 
-                  ? 'opacity-100 translate-x-0' 
+                  ? 'opacity-100 translate-x-0 text-[#0013DC]' 
                   : 'opacity-0 -translate-x-8'
-              }`}
+              } ${showDifferent ? 'text-[#001A29]' : ''}`}
             >
               Different
             </span>
           </h2>
 
+          {/* Orange Header Line - appears when all words are visible */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={showDifferent ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-32 h-1 bg-sharp-orange mx-auto mb-8 rounded-full"
+          />
+
           {/* Subheadline */}
-          <p className="body-lg mb-12 max-w-4xl mx-auto">
+          <p className="body-lg mb-8 max-w-4xl mx-auto text-gray-800">
             We build AI that adapts to you, transforming your workflows into intelligent systems by automating processes, 
             surfacing insights, and accelerating growth with solutions designed specifically for how your business operates.
           </p>
+          
+          {/* Contact Us Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-lg px-8 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Contact Us
+          </motion.button>
         </div>
       </div>
     </section>

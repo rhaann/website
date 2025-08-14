@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Benefits', href: '#benefits' },
-    { name: 'Our Approach', href: '#approach' },
+    { name: 'Our Approach', href: '#ourApproach' },
     { name: 'Services', href: '#services' },
     { name: 'Contact Us', href: '#contact' },
     { name: 'About Us', href: '#about' },
@@ -55,9 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 {item.name}
               </button>
             ))}
-            <button onClick={() => scrollToSection('#contact')} className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-sm lg:text-base px-6 py-2 rounded-lg transition-all duration-200">
-              Contact Us
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,9 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   {item.name}
                 </button>
               ))}
-              <button onClick={() => scrollToSection('#contact')} className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium w-full mt-6 text-base py-3 px-6 rounded-lg transition-all duration-200">
-                Contact Us
-              </button>
+
             </div>
           </div>
         )}

@@ -28,11 +28,12 @@ function App() {
       <main>
         <Hero />
         <Benefits />
+        <TrustedBy />
         <OurApproach />
         <OperationalAdvantage />
         <Services />
         <Contact />
-        <TrustedBy />
+        
         <About />
       </main>
       <Footer />
