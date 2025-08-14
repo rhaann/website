@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
                 showAI 
                   ? 'opacity-100 translate-x-0 text-[#0090FF]' 
                   : 'opacity-0 -translate-x-8'
-              } ${showDifferent ? 'text-[#001A29]' : ''}`}
+              } ${showDifferent ? 'text-[#0013DC]' : ''}`}
             >
               AI
             </span>
