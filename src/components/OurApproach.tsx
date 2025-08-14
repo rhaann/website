@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApproachComparison: React.FC = () => {
+const OurApproach: React.FC = () => {
   return (
     <section id="why-we-are-different" className="section-padding bg-pure-white">
       <div className="container-custom">
@@ -94,4 +94,4 @@ const ApproachComparison: React.FC = () => {
   );
 };
 
-export default ApproachComparison; 
+export default OurApproach; 

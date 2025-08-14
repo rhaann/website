@@ -16,6 +16,56 @@
   }
 }
 
+/* Custom animations */
+@keyframes logoSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-rotate {
+  animation: logoSpin 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.logo-rotate:hover {
+  animation-duration: 8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-rotate {
+    animation: none;
+  }
+}
+
+/* Marquee left-to-right animation for logo strip */
+@keyframes marqueeLTR {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  animation: marqueeLTR 30s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 @layer components {
   /* Clean Button Styles */
   .btn-primary {

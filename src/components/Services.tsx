@@ -70,29 +70,29 @@ const Services: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="card-hover group"
+              className="card-hover group p-6"
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-navy-black rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 bg-navy-black rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <div className="text-pure-white">
                   {service.icon}
                 </div>
               </div>
 
               {/* Content */}
-              <h3 className="heading-md mb-4 group-hover:text-navy-black/80 transition-colors duration-300">
+              <h3 className="text-xl sm:text-2xl font-bold leading-tight mb-3 group-hover:text-navy-black/80 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="body-md mb-6">
+              <p className="text-sm sm:text-base text-navy-black/70 leading-relaxed mb-4">
                 {service.description}
               </p>
 
               {/* Features */}
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-2 mb-4">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-navy-black/70">
                     <div className="w-2 h-2 bg-navy-black rounded-full mr-3 flex-shrink-0"></div>
@@ -100,14 +100,6 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Learn More Button */}
-              <button className="text-navy-black font-medium hover:text-navy-black/70 transition-colors duration-200 flex items-center group text-sm">
-                Learn More
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           ))}
         </div>

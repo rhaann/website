@@ -9,9 +9,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Our Approach', href: '#approach' },
     { name: 'Benefits', href: '#benefits' },
+    { name: 'Our Approach', href: '#approach' },
+    { name: 'Services', href: '#services' },
     { name: 'Contact Us', href: '#contact' },
     { name: 'About Us', href: '#about' },
   ];
@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/logo_colored_light.svg" 
+              src="/logo_dark.svg" 
               alt="Actual Insight Logo" 
               className="w-8 h-8"
             />
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 {item.name}
               </button>
             ))}
-            <button className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-sm lg:text-base px-6 py-2 rounded-lg transition-all duration-200">
+            <button onClick={() => scrollToSection('#contact')} className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-sm lg:text-base px-6 py-2 rounded-lg transition-all duration-200">
               Contact Us
             </button>
           </div>
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   {item.name}
                 </button>
               ))}
-              <button className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium w-full mt-6 text-base py-3 px-6 rounded-lg transition-all duration-200">
+              <button onClick={() => scrollToSection('#contact')} className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium w-full mt-6 text-base py-3 px-6 rounded-lg transition-all duration-200">
                 Contact Us
               </button>
             </div>

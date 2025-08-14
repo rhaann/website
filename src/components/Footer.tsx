@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               {/* Social Links */}
               <div className="flex space-x-4">
                 <a
-                  href="https://linkedin.com/company/actualinsight"
+                  href="https://www.linkedin.com/company/actual-insight/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-navy-black/50 border border-pure-white/20 rounded-lg flex items-center justify-center hover:bg-pure-white hover:border-pure-white transition-all duration-300"
@@ -111,11 +111,6 @@ const Footer: React.FC = () => {
                 <li>
                   <a href="#contact" className="text-pure-white/70 hover:text-pure-white transition-colors duration-200">
                     Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="/careers" className="text-pure-white/70 hover:text-pure-white transition-colors duration-200">
-                    Careers
                   </a>
                 </li>
                 <li>

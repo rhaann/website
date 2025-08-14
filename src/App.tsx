@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import ApproachComparison from './components/ApproachComparison';
 import Benefits from './components/Benefits';
 import Contact from './components/Contact';
 import About from './components/About';
 import Footer from './components/Footer';
+import OurApproach from './components/OurApproach';
+import TrustedBy from './components/TrustedBy';
+import OperationalAdvantage from './components/OperationalAdvantage';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +27,12 @@ function App() {
       <Navbar isScrolled={isScrolled} />
       <main>
         <Hero />
-        <Services />
-        <ApproachComparison />
         <Benefits />
+        <OurApproach />
+        <OperationalAdvantage />
+        <Services />
         <Contact />
+        <TrustedBy />
         <About />
       </main>
       <Footer />

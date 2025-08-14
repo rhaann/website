@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-pure-white py-20">
+    <section id="contact" className="relative overflow-hidden bg-grey-lighter/30 py-20">
       <div className="container-custom">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
