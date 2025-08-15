@@ -34,7 +34,7 @@ function App() {
         <Services />
         <Contact />
         
-        <About />
+        {/* <About /> */}
       </main>
       <Footer />
     </div>

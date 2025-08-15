@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'Our Approach', href: '#ourApproach' },
     { name: 'Services', href: '#services' },
     { name: 'Contact Us', href: '#contact' },
-    { name: 'About Us', href: '#about' },
+    // { name: 'About Us', href: '#about' },
   ];
 
   const scrollToSection = (href: string) => {
