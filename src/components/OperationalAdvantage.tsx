@@ -10,28 +10,18 @@ const OperationalAdvantage: React.FC = () => {
   const items: AdvantageItem[] = [
     {
       step: 1,
-      title: 'AI Operating System',
-      description:
-        "We start by building your AI Operating System. This is the foundation for everything we create together. This personalized conversational interface connects with your existing systems, surfaces critical insights, and automates routine tasks to deliver immediate productivity gains. As we build new capabilities, they're seamlessly delivered through this unified platform that understands your business inside and out.",
-    },
+      title: 'Audit',
+      description:"We start with your reality. We look across the company end to end to map the blueprint of you processes. We inventory data sources and pipelines, check quality and access, and trace how data flows from capture to consumption. We shadow key workflows to surface repetitive tasks, handoffs, and failure points. We quantify volumes, cycle times, and error rates, then agree on baselines. You’ll see where the data is strong, where it needs work, and which friction points are worth solving first. By the end, everyone shares the same picture of the current state and how success will be measured."    },
     {
       step: 2,
-      title: 'Workflow Optimization',
-      description:
-        'We identify your biggest friction points and transform them into streamlined processes that save hours every day and reduce costly errors. Using data from your workflows, we gain insights that reveal optimization opportunities while giving your team immediate relief from repetitive tasks. Through this analysis, we create the foundation for reliable automation built on proven logic.',
+      title: 'Advisory',
+      description:"Using the evidence from Audit, we turn findings into guidance your teams can execute. We prioritize opportunities by impact and feasibility, sequence the work, and outline a target architecture that fits your warehouse and tools. We provide decision frameworks and standards, review designs and prototypes, and support vendor evaluation and RFPs. We keep progress tied to the baselines established in Audit and maintain alignment across leaders and delivery teams. This phase is advisory only—your teams build; we ensure the plan stays clear, realistic, and on track."
     },
     {
       step: 3,
-      title: 'Autonomous Agents',
-      description:
-        'Once workflows prove themselves through real-world performance, we transform them into AI agents that execute independently through your AI Operating System. Each agent is built on the business processes and insights uncovered during workflow optimization. This ensures reliable, accurate automation that delivers consistent results.',
-    },
-    {
-      step: 4,
-      title: 'AI–Native Organization',
-      description:
-        'As we deploy more AI agents, your organization transforms into a collaborative ecosystem. Your specialized agents work together seamlessly through your unified interface, creating organizational intelligence that lets you move faster, adapt quicker, and scale smarter than competitors still relying on manual processes and disconnected systems.',
-    },
+      title: 'AI Partner',
+      description: "We become your AI department, focused on your company’s needs. From first pilot to scaled rollout, we design, develop, and deploy governed, production-ready agents and applications that fit your stack and daily workflows. We stand up a safe sandbox, connect to your data, and ship with observability, audit trails, performance budgets, and clear runbooks and training. We review results against the Audit baselines on a regular cadence, expand what works, tune what lags, and keep outcomes tied to the metrics that matter."
+    }
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);

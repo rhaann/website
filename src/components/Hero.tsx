@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-pure-white">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-grey-lighter/30">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto text-center">
 
@@ -65,8 +65,8 @@ const Hero: React.FC = () => {
 
           {/* Subheadline */}
           <p className="body-lg mb-8 max-w-4xl mx-auto text-gray-800">
-            We build AI that adapts to you, transforming your workflows into intelligent systems by automating processes, 
-            surfacing insights, and accelerating growth with solutions designed specifically for how your business operates.
+          AI without your data is just expensive guesswork. We combine data expertise with AI capabilities to unlock your business's full potential,
+           building solutions designed for measurable ROI, not innovation theater
           </p>
           
           {/* Contact Us Button */}

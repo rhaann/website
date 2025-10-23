@@ -9,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Benefits', href: '#benefits' },
+    // { name: 'Benefits', href: '#benefits' },
     { name: 'Our Approach', href: '#ourApproach' },
     { name: 'Services', href: '#services' },
     { name: 'Contact Us', href: '#contact' },

@@ -5,28 +5,16 @@ const Benefits: React.FC = () => {
 
   const benefits = [
     {
-      title: 'Immediate ROI, Lower Risk',
-      content: 'Your AI Operating System delivers value from day one by answering questions, surfacing insights, and connecting your team to existing systems instantly. Then we use our friction-finding methodology to identify and build the RIGHT workflows and agents that solve your biggest pain points. ROI starts immediately and compounds as each new agent amplifies your team\'s capabilities.'
+      title: 'Expert-Led Assessment',
+      content: 'Led by Alex Morton, our audits combine technical expertise with business acumen to deliver practical, implementable recommendations tailored to your organizations needs.'
     },
     {
-      title: '10x Capacity Without the Headcount',
-      content: 'Your team doesn\'t need to triple in size; it needs intelligent automation. Your AI Operating System handles high-volume tasks and complex workflows automatically, freeing your existing team to focus on strategy, innovation, and the work that actually drives growth.'
+      title: 'Proven Methodology',
+      content: ' Our structured discovery process helps organizations across industries identify AI opportunities, evaluate feasibility, and prioritize initiatives by potential impact and business value.'
     },
     {
-      title: 'AI Agents That Learn Your Business',
-      content: 'Each agent is trained on your specific workflows and fine-tuned to understand your business logic. The more you use it, the smarter it gets—creating intelligence that\'s uniquely yours and impossible for competitors to replicate.'
-    },
-    {
-      title: 'Round-the-Clock Execution',
-      content: 'Your business doesn\'t stop at 5 p.m., and neither does your AI Operating System. Run critical operations continuously in the background 24/7, like processing orders, updating systems, and monitoring workflows to keep your business moving forward even when your team is offline.'
-    },
-    {
-      title: 'Intelligent Decisions in Real Time',
-      content: 'Your AI Operating System connects all your systems instantly, giving you a complete view of your business in one conversation. Instead of hunting through multiple platforms for answers, you get comprehensive insights that enable faster, smarter decisions and keep you ahead of the competition.'
-    },
-    {
-      title: 'Scale Fast Without the Burnout',
-      content: 'Growth shouldn\'t come at the cost of your team\'s well-being. By automating repetitive tasks and streamlining complex processes, we help your team thrive under rapid expansion by boosting productivity while reducing stress and creating space for meaningful work.'
+      title: 'Action-Oriented Results',
+      content: 'We deliver clear roadmaps with specific milestones, deliverables, and timelines that drive real transformation - not just analysis, but actionable next steps.'
     }
   ];
 

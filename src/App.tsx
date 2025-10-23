@@ -27,12 +27,15 @@ function App() {
       <Navbar isScrolled={isScrolled} />
       <main>
         <Hero />
-        <Benefits />
-        <TrustedBy />
+        {/* <Benefits /> */}
+        
         <OurApproach />
-        <OperationalAdvantage />
+        {/* <OperationalAdvantage /> */}
+        <TrustedBy />
         <Services />
         <Contact />
+        
+        
         
         {/* <About /> */}
       </main>

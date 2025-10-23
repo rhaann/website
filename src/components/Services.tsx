@@ -3,28 +3,28 @@ import React from 'react';
 const Services: React.FC = () => {
   const services = [
     {
-      title: 'Workflow Automation',
-      description: 'Transform your existing business processes into intelligent, automated systems that work 24/7.',
+      title: 'Audit',
+      description: 'A systematic evaluation that cuts through hype to identify exactly where and how AI can deliver competitive advantage for your organization.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      features: ['Process Analysis', 'Automation Design', 'Integration', '24/7 Execution']
+      features: [ 'Opportunity Mapping','ROI Analysis', 'Readiness Assessment',  'Practical Roadmap']
     },
     {
-      title: 'AI-Powered Insights',
-      description: 'Surface actionable insights from your data to drive better decision-making and business growth.',
+      title: 'Advisor',
+      description: 'Ongoing strategic guidance that embeds AI best practices into your team and tools, ensuring every initiative drives measurable business impact.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      features: ['Data Analysis', 'Predictive Modeling', 'Real-time Monitoring', 'Actionable Reports']
+      features: ['Train & Enable Your Teams', 'Architect Implementation Plans', 'Evaluate & Wireframe Solutions', 'Measure Business Impact']
     },
     {
-      title: 'AI Agents & Integrations',
-      description: 'Build secure, conversational agents at scale that plan, decide, and take action across your tools and data.',
+      title: 'AI Partner',
+      description: 'A fractional AI department that continuously develops, maintains, and scales your AI capabilities as a long-term extension of your organization',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -32,7 +32,7 @@ const Services: React.FC = () => {
           <circle cx="15" cy="9" r="1" />
         </svg>
       ),
-      features: ['System Integration', 'Knowledge Grounding & Memory', 'Scalable Architecture', 'Enterprise Security & Observability']
+      features: ['End-to-End Development', 'Infrastructure & Environment Management', 'Security & Governance Oversight', 'Continuous Scaling & Evolution']
     }
   ];
 
@@ -45,8 +45,7 @@ const Services: React.FC = () => {
            Services
           </h2>
           <p className="body-lg max-w-4xl mx-auto">
-            We build AI solutions that adapt to your business, transforming workflows into intelligent systems 
-            that deliver 10x capacity without increasing headcount.
+          From strategic clarity to full-scale implementation, we provide the expertise and execution to turn AI from aspiration into operational reality for your organization.
           </p>
         </div>
 
