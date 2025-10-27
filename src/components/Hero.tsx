@@ -19,13 +19,26 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-grey-lighter/30">
-      <div className="container-custom">
-        <div className="max-w-6xl mx-auto text-center">
+  
 
-          {/* Main Headline */}
-          <h2 className="heading-xl mb-8 flex justify-center items-center gap-4 flex-wrap">
+  return (
+    <section id="home" className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white">
+
+      {/* Soft white-to-light gradient overlay for professional minimal look */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background: 'linear-gradient(180deg, #ffffff 0%, #dbe6ff 100%)',
+        }}
+      />
+
+      <div className="container-custom relative z-10">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Remove card; let text sit directly over subtle background */}
+          <div className="mx-auto inline-block px-6 py-6 md:px-10 md:py-8">
+            {/* Main Headline */}
+            <h2 className="heading-xl mb-8 flex justify-center items-center gap-4 flex-wrap">
             <span 
               className={`transition-all duration-1000 ease-out ${
                 showAI 
@@ -53,7 +66,7 @@ const Hero: React.FC = () => {
             >
               Different
             </span>
-          </h2>
+            </h2>
 
           {/* Orange Header Line - appears when all words are visible */}
           <motion.div
@@ -74,10 +87,13 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-lg px-8 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="group relative bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-lg px-8 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            Contact Us
+            <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-pure-white after:transition-[width] after:duration-300 group-hover:after:w-full">
+              Contact Us
+            </span>
           </motion.button>
+          </div>
         </div>
       </div>
     </section>
