@@ -14,58 +14,66 @@ const OurApproach: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.9 } }
   };
 
+  const pillars = [
+    {
+      num: '01',
+      title: 'Independent by Design',
+      text: 'Our recommendations are conflict-free. We have no platforms to push, no partnerships to protect, and no incentive other than your success.',
+    },
+    {
+      num: '02',
+      title: 'Grounded in Experience',
+      text: 'Actual Insight was founded by a veteran data engineer with over a decade of experience turning complex data environments into strategic advantage.',
+    },
+    {
+      num: '03',
+      title: 'Built to Last',
+      text: "We don't create dependency. Every engagement is designed to leave your team more capable, more confident, and less reliant on outside help.",
+    },
+  ];
+
   return (
-    <section id="ourApproach" className="section-padding bg-pure-white">
+    <section id="ourApproach" className="section-padding bg-grey-lighter/50">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="heading-lg mb-6">
-              Faster, Leaner, Smarter AI Deployment
-            </h2>
-          </div>
+          <span className="text-sharp-orange text-sm font-medium tracking-[0.2em] uppercase mb-5 block">
+            Why Us?
+          </span>
 
-          {/*
-            Previous layout: Comparison Grid (Our Approach vs Traditional Approach)
-            Keeping this block for reference while experimenting with the new 3-row layout.
-            <div className="grid lg:grid-cols-2 gap-8"> ... </div>
-          */}
-
-          {/* New 3-row layout: Faster, Leaner, Smarter */}
+          <h2 className="text-4xl md:text-[3.25rem] md:leading-[1.15] font-extrabold text-navy-black mb-5">
+            Enhance your existing strategy with clarity, not complexity.
+          </h2>
+          <p className="text-navy-black/50 text-base md:text-lg max-w-xl mb-16">
+            We're not here to sell you something. We're here to help you get the most out of your existing tools and data.
+          </p>
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.9 }}
-            className="max-w-4xl mx-auto space-y-8"
+            viewport={{ once: true, amount: 0.4 }}
+            className="grid md:grid-cols-3 gap-10 md:gap-12"
           >
-            {/* Faster */}
-            <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-start md:gap-6 bg-grey-lighter/40 rounded-2xl p-8">
-              <div className="md:w-48 shrink-0 mb-2 md:mb-0">
-                <h3 className="text-2xl font-bold text-navy-black">Faster</h3>
-            </div>
-              <p className="text-lg text-navy-black/80">
-                Launch meaningful pilots in weeks, not months—using a focused roadmap and proven accelerators.
-              </p>
-            </motion.div>
-            {/* Leaner */}
-            <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-start md:gap-6 bg-grey-lighter/40 rounded-2xl p-8">
-              <div className="md:w-48 shrink-0 mb-2 md:mb-0">
-                <h3 className="text-2xl font-bold text-navy-black">Leaner</h3>
-            </div>
-              <p className="text-lg text-navy-black/80">
-                Target the highest‑ROI workflows first, avoid platform bloat, and keep ownership of your stack.
-              </p>
-            </motion.div>
-            {/* Smarter */}
-            <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-start md:gap-6 bg-grey-lighter/40 rounded-2xl p-8">
-              <div className="md:w-48 shrink-0 mb-2 md:mb-0">
-                <h3 className="text-2xl font-bold text-navy-black">Smarter</h3>
-          </div>
-              <p className="text-lg text-navy-black/80">
-                Solutions grounded in your data and operations—measured by outcomes, not demos.
-              </p>
-            </motion.div>
+            {pillars.map((pillar) => (
+              <motion.div key={pillar.num} variants={itemVariants} className="flex flex-col">
+                {/* Orange top line */}
+                <div className="w-16 h-[3px] bg-sharp-orange mb-10" />
+
+                {/* Number */}
+                <span className="text-sm font-medium tracking-wider text-navy-black/50 mb-3">
+                  {pillar.num}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-navy-black mb-4">
+                  {pillar.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-base leading-relaxed text-navy-black/60">
+                  {pillar.text}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
@@ -73,4 +81,4 @@ const OurApproach: React.FC = () => {
   );
 };
 
-export default OurApproach; 
+export default OurApproach;

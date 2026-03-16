@@ -13,14 +13,19 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     // { name: 'Benefits', href: '#benefits' },
     { name: 'Our Approach', href: '#ourApproach' },
     { name: 'Services', href: '#services' },
+    { name: 'Articles', href: '/articles' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Contact Us', href: '#contact' },
-    // { name: 'About Us', href: '#about' },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = href;
     }
     setIsMobileMenuOpen(false);
   };
