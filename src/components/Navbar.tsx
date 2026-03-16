@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 interface NavbarProps {
@@ -7,10 +8,11 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    // { name: 'Benefits', href: '#benefits' },
     { name: 'Our Approach', href: '#ourApproach' },
     { name: 'Services', href: '#services' },
     { name: 'Articles', href: '/articles' },
@@ -18,16 +20,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'Contact Us', href: '#contact' },
   ];
 
-  const scrollToSection = (href: string) => {
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+
     if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        const element = document.querySelector(href);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.location.href = href;
+      navigate(href);
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -40,25 +49,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <motion.img 
-              src="/logo_dark.svg" 
-              alt="Actual Insight Logo" 
+          <Link to="/" className="flex items-center space-x-3">
+            <motion.img
+              src="/logo_dark.svg"
+              alt="Actual Insight Logo"
               className="w-8 h-8"
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.12, 1] }}
               transition={{ duration: 0.4, ease: ['easeOut', 'easeIn'], repeat: Infinity, repeatDelay: 4.6 }}
             />
             <h1 className="logo-text">actual insight</h1>
-          </div>
+          </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item.href)}
                 className="nav-link text-sm lg:text-base"
               >
                 {item.name}
@@ -66,7 +73,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -98,20 +104,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-pure-white border-t border-grey-lighter shadow-lg">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item.href)}
                   className="block w-full text-left nav-link py-3 text-base border-b border-grey-lighter/50 last:border-b-0"
                 >
                   {item.name}
                 </button>
               ))}
-
             </div>
           </div>
         )}
@@ -120,4 +124,4 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

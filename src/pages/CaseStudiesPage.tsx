@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import caseStudies from '../data/caseStudies';
 
-const CaseStudies: React.FC = () => {
+const CaseStudiesPage: React.FC = () => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -17,25 +17,16 @@ const CaseStudies: React.FC = () => {
   };
 
   return (
-    <section id="case-studies" className="py-16 md:py-20 bg-pure-white">
+    <div className="pt-24 pb-16 md:pt-32 md:pb-20 bg-pure-white min-h-screen">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-sharp-orange text-sm font-medium tracking-[0.2em] uppercase mb-5 block">
-                Case Studies
-              </span>
-              <h2 className="text-4xl md:text-[3.25rem] md:leading-[1.15] font-extrabold text-navy-black">
-                Strategy in practice.
-              </h2>
-            </div>
-            <Link
-              to="/case-studies"
-              className="text-navy-black/40 text-sm font-medium tracking-[0.15em] uppercase hover:text-sharp-orange transition-colors duration-300 flex items-center gap-2 self-start md:self-end"
-            >
-              View All
-              <span className="text-base">→</span>
-            </Link>
+          <div className="mb-10">
+            <span className="text-sharp-orange text-sm font-medium tracking-[0.2em] uppercase mb-5 block">
+              Case Studies
+            </span>
+            <h1 className="text-4xl md:text-[3.25rem] md:leading-[1.15] font-extrabold text-navy-black">
+              Strategy in practice.
+            </h1>
           </div>
 
           <div className="h-px bg-navy-black/10" />
@@ -43,8 +34,7 @@ const CaseStudies: React.FC = () => {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
           >
             {caseStudies.map((study) => (
               <motion.div key={study.num} variants={itemVariants}>
@@ -59,9 +49,9 @@ const CaseStudies: React.FC = () => {
                     <span className="text-navy-black/40 text-xs font-medium tracking-[0.15em] uppercase block mb-3">
                       {study.industry}
                     </span>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-navy-black whitespace-pre-line leading-tight mb-4 group-hover:text-sharp-orange transition-colors duration-300">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-navy-black whitespace-pre-line leading-tight mb-4 group-hover:text-sharp-orange transition-colors duration-300">
                       {study.titleMultiline}
-                    </h3>
+                    </h2>
                     <div className="flex flex-wrap gap-2">
                       {study.tags.map((tag) => (
                         <span
@@ -86,8 +76,8 @@ const CaseStudies: React.FC = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default CaseStudies;
+export default CaseStudiesPage;

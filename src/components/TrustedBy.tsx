@@ -1,14 +1,15 @@
 import React from 'react';
 
 const TrustedBy: React.FC = () => {
-  const logos = [
+  const logos: { src: string; alt: string; invert?: boolean }[] = [
     { src: '/mcdonalds.png', alt: "McDonald's" },
     { src: '/asurion.png', alt: 'Asurion' },
     { src: '/unilever.png', alt: 'Unilever' },
     { src: '/makerWine.png', alt: "Maker Wine" },
     { src: '/compassEast.png', alt: 'Compass East' },
     { src: '/venturous.png', alt: "Venturous" },
-
+    { src: '/walkerBrothers.avif', alt: "Walker Brothers" },
+    { src: '/foresight.png', alt: "Foresight", invert: true },
   ];
 
   return (
@@ -28,7 +29,7 @@ const TrustedBy: React.FC = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full object-contain"
+                  className={`max-h-full max-w-full object-contain${logo.invert ? ' invert' : ''}`}
                   loading="lazy"
                 />
               </div>
