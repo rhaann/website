@@ -59,12 +59,12 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 <li>
                   <a href="#services" className="text-pure-white/70 hover:text-pure-white transition-colors duration-200">
-                    Audit
+                    AI Blueprint
                   </a>
                 </li>
                 <li>
                   <a href="#services" className="text-pure-white/70 hover:text-pure-white transition-colors duration-200">
-                    Advisor
+                    AI Advisor
                   </a>
                 </li>
                 <li>

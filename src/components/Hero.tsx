@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const [showAI, setShowAI] = useState(false);
   const [showBuilt, setShowBuilt] = useState(false);
   const [showDifferent, setShowDifferent] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Start the animation sequence
@@ -19,21 +20,36 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  
+  // Slow down the background video
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   return (
     <section id="home" className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white">
+      {/* Background video */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/mountain.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-      {/* Soft white-to-light gradient overlay for professional minimal look */}
+      {/* Soft translucent gradient overlay for readability over video */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0"
+        className="pointer-events-none absolute inset-0 z-10"
         style={{
-          background: 'linear-gradient(180deg, #ffffff 0%, #dbe6ff 100%)',
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(219,230,255,0.70) 100%)',
         }}
       />
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-20">
         <div className="max-w-6xl mx-auto text-center">
           {/* Remove card; let text sit directly over subtle background */}
           <div className="mx-auto inline-block px-6 py-6 md:px-10 md:py-8">

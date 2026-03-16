@@ -3,7 +3,7 @@ import React from 'react';
 const Services: React.FC = () => {
   const services = [
     {
-      title: 'Audit',
+      title: 'AI Blueprint',
       description: 'A systematic evaluation that cuts through hype to identify exactly where and how AI can deliver competitive advantage for your organization.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -13,7 +13,7 @@ const Services: React.FC = () => {
       features: [ 'Opportunity Mapping','ROI Analysis', 'Readiness Assessment',  'Practical Roadmap']
     },
     {
-      title: 'Advisor',
+      title: 'AI Advisor',
       description: 'Ongoing strategic guidance that embeds AI best practices into your team and tools, ensuring every initiative drives measurable business impact.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

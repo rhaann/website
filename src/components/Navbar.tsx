@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -36,10 +37,13 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
+            <motion.img 
               src="/logo_dark.svg" 
               alt="Actual Insight Logo" 
               className="w-8 h-8"
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.12, 1] }}
+              transition={{ duration: 0.4, ease: ['easeOut', 'easeIn'], repeat: Infinity, repeatDelay: 4.6 }}
             />
             <h1 className="logo-text">actual insight</h1>
           </div>
