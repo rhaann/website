@@ -2,79 +2,118 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const OurApproach: React.FC = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.6, delayChildren: 0.15 }
-    }
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9 } }
+  const stagger = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
   };
 
   const pillars = [
     {
       num: '01',
-      title: 'Independent by Design',
-      text: 'Our recommendations are conflict-free. We have no platforms to push, no partnerships to protect, and no incentive other than your success.',
+      label: 'Foundation',
+      titleWhite: 'Strategy',
+      titleAccent: 'before\nsoftware.',
+      text: 'Every failed AI initiative started with a tool purchase. We start with your business - your workflows, your data, your goals - and build the strategy first. Tools come last, if at all.',
     },
     {
       num: '02',
-      title: 'Grounded in Experience',
-      text: 'Actual Insight was founded by a veteran data engineer with over a decade of experience turning complex data environments into strategic advantage.',
+      label: 'Model',
+      titleWhite: 'Built to',
+      titleAccent: 'transfer\nownership.',
+      text: "We don't build systems you'll depend on us to maintain. Every engagement is designed to leave your team more capable and confident than we found them. You own the roadmap. You own the execution.",
     },
     {
       num: '03',
-      title: 'Built to Last',
-      text: "We don't create dependency. Every engagement is designed to leave your team more capable, more confident, and less reliant on outside help.",
+      label: 'Fit',
+      titleWhite: 'Priced for',
+      titleAccent: 'the middle\nmarket.',
+      text: "You don't need a 200-person consulting team to build a great AI strategy. You need the right people, the right process, and a plan your team can actually own and execute.",
     },
   ];
 
+
   return (
-    <section id="ourApproach" className="section-padding bg-grey-lighter/50">
+    <section id="ourApproach" className="bg-white py-20 sm:py-24 lg:py-32">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto">
-          <span className="text-sharp-orange text-sm font-medium tracking-[0.2em] uppercase mb-5 block">
-            Why Us?
-          </span>
 
-          <h2 className="text-4xl md:text-[3.25rem] md:leading-[1.15] font-extrabold text-navy-black mb-5">
-            Enhance your existing strategy with clarity, not complexity.
-          </h2>
-          <p className="text-navy-black/50 text-base md:text-lg max-w-xl mb-16">
-            We're not here to sell you something. We're here to help you get the most out of your existing tools and data.
-          </p>
+          {/* ── Two-column header ── */}
           <motion.div
-            variants={containerVariants}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="grid md:grid-cols-3 gap-10 md:gap-12"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-20"
           >
-            {pillars.map((pillar) => (
-              <motion.div key={pillar.num} variants={itemVariants} className="flex flex-col">
-                {/* Orange top line */}
-                <div className="w-16 h-[3px] bg-sharp-orange mb-10" />
+            <motion.div variants={fadeUp}>
+              <span className="inline-flex items-center gap-3 text-navy-black/40 text-xs font-medium tracking-[0.2em] uppercase mb-8">
+                <span className="w-8 h-px bg-navy-black/20" />
+                Our Approach
+              </span>
+              <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-navy-black leading-[1.1]">
+                The bottleneck isn't{' '}
+                <span className="text-sky-blue">technology.</span>
+                <br />
+                It never was.
+              </h2>
+            </motion.div>
 
-                {/* Number */}
-                <span className="text-sm font-medium tracking-wider text-navy-black/50 mb-3">
-                  {pillar.num}
-                </span>
-
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-navy-black mb-4">
-                  {pillar.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-base leading-relaxed text-navy-black/60">
-                  {pillar.text}
-                </p>
-              </motion.div>
-            ))}
+            <motion.div variants={fadeUp} className="md:border-t md:border-navy-black/10 md:pt-8">
+              <p className="text-navy-black/55 text-base sm:text-lg leading-relaxed mb-6">
+                AI investment is accelerating. Execution is failing. Most mid-market
+                organizations know they need to move — but they don't have the internal
+                expertise, and they can't justify{' '}
+                <strong className="text-navy-black font-semibold">enterprise consulting fees</strong>{' '}
+                for a generic framework that collects dust.
+              </p>
+              <p className="text-navy-black/55 text-base sm:text-lg leading-relaxed">
+                We sit in exactly that gap.{' '}
+                <strong className="text-navy-black font-semibold">
+                  Strategic depth without the overhead.
+                </strong>{' '}
+                A model built to create capability, not dependency.
+              </p>
+            </motion.div>
           </motion.div>
+
+          {/* ── Three-column pillars ── */}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mb-16"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-navy-black/10">
+              {pillars.map((p) => (
+                <motion.div
+                  key={p.num}
+                  variants={fadeUp}
+                  className="p-8 sm:p-10"
+                >
+                  <span className="text-navy-black/35 text-xs font-medium tracking-[0.15em] uppercase block mb-6">
+                    {p.num} — {p.label}
+                  </span>
+                  <h3 className="text-2xl sm:text-[1.7rem] font-bold text-navy-black leading-tight mb-5">
+                    {p.titleWhite}
+                    <br />
+                    <span className="text-sky-blue whitespace-pre-line">{p.titleAccent}</span>
+                  </h3>
+                  <p className="text-navy-black/50 text-sm sm:text-base leading-relaxed">
+                    {p.text}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+         
+
         </div>
       </div>
     </section>

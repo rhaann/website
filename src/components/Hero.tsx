@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
         aria-hidden
         className="pointer-events-none absolute inset-0 z-10"
         style={{
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(219,230,255,0.70) 100%)',
+          background: 'linear-gradient(180deg, rgba(255,252,247,0.72) 0%, rgba(240,232,220,0.65) 100%)',
         }}
       />
 

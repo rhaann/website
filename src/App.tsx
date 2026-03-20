@@ -12,15 +12,17 @@ import CaseStudyDetail from './pages/CaseStudyDetail';
 import ArticlesPage from './pages/ArticlesPage';
 import ArticleDetail from './pages/ArticleDetail';
 import ScrollToTop from './components/ScrollToTop';
+import About from './components/About';
 
 function HomePage() {
   return (
     <main>
       <Hero />
       <OurApproach />
-      <TrustedBy />
       <Services />
+      <TrustedBy />
       <Contact />
+      <About />
     </main>
   );
 }
