@@ -12,12 +12,13 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Our Approach', href: '#ourApproach' },
-    { name: 'Services', href: '#services' },
-    { name: 'Articles', href: '/articles' },
+    { name: 'The Problem', href: '#problem' },
+    { name: 'The Solution', href: '#ourApproach' },
+    { name: 'Who It\'s For', href: '#whoItsFor' },
+    { name: 'Why Us', href: '#whyUs' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Articles', href: '/articles' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (href: string) => {

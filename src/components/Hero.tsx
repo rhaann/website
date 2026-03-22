@@ -50,33 +50,47 @@ const Hero: React.FC = () => {
       />
 
       <div className="container-custom relative z-20">
-        <div className="max-w-6xl mx-auto text-center">
-            {/* Main Headline */}
-            <h2 className="text-3xl md:text-5xl font-bold mb-10 text-navy-black">
-              <span className={`block mb-3 transition-all duration-1000 ease-out ${showAI ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                AI investment is accelerating.
+        <div className="max-w-4xl mx-auto text-center">
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-black mb-6 leading-[1.1]">
+              <span className={`block mb-2 transition-all duration-1000 ease-out ${showAI ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                AI investment is accelerating
               </span>
-              <span className={`block transition-all duration-1000 ease-out ${showBuilt ? 'opacity-100 translate-y-0 text-[#0090FF]' : 'opacity-0 translate-y-4'}`}>
-                Execution is failing.
+              <span className={`block transition-all duration-1000 ease-out ${showBuilt ? 'opacity-100 translate-y-0 text-sky-blue' : 'opacity-0 translate-y-4'}`}>
+                Meaningful impact is not
               </span>
-            </h2>
+            </h1>
 
             {/* Subheadline */}
-            <p className={`text-xl md:text-2xl font-semibold mb-10 text-navy-black transition-all duration-1000 ease-out ${showDifferent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Your data. Your strategy. A clear path forward.
-            </p>
+            <div className={`max-w-2xl mx-auto mb-10 transition-all duration-1000 ease-out ${showDifferent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-navy-black mb-4">
+                The gap isn't tools, it's strategy
+              </p>
+              <p className="text-base sm:text-lg text-navy-black/80 leading-relaxed">
+                We help leadership teams identify where AI drives ROI and build a plan to execute it.
+                Built around your data, your workflows, and your business – not someone else's playbook.
+              </p>
+            </div>
 
-            {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative bg-sharp-orange hover:bg-sharp-orange/90 text-pure-white font-medium text-lg px-10 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-pure-white after:transition-[width] after:duration-300 group-hover:after:w-full">
-                Get Your Roadmap
-              </span>
-            </motion.button>
+            {/* CTAs */}
+            <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out ${showDifferent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-sharp-orange hover:bg-sharp-orange/90 text-white font-medium text-lg px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Book a Clarity Session
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-sky-blue font-medium text-lg px-8 py-4 rounded-lg border-2 border-sky-blue hover:bg-sky-blue hover:text-white transition-all duration-200"
+              >
+                See How It Works
+              </motion.button>
+            </div>
         </div>
       </div>
     </section>

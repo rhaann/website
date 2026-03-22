@@ -16,7 +16,9 @@ const TrustedBy: React.FC = () => {
     <section id="trusted-by" className="py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-pure-white">
       <div className="container-custom">
         <div className="text-center mb-8">
-          <h2 className="heading-lg mb-4">Trusted By</h2>
+          <span className="text-navy-black/35 text-xs font-medium tracking-[0.2em] uppercase">
+            Trusted By
+          </span>
         </div>
 
         <div className="marquee">

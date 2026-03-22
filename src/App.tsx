@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
+// import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import OurApproach from './components/OurApproach';
@@ -13,14 +13,22 @@ import ArticlesPage from './pages/ArticlesPage';
 import ArticleDetail from './pages/ArticleDetail';
 import ScrollToTop from './components/ScrollToTop';
 import About from './components/About';
+import Problem from './components/Problem';
+import Stakes from './components/Stakes';
+// import HowItWorks from './components/HowItWorks';
+import WhoItsFor from './components/WhoItsFor';
+import WhyUs from './components/WhyUs';
 
 function HomePage() {
   return (
     <main>
       <Hero />
-      <OurApproach />
-      <Services />
       <TrustedBy />
+      <Problem />
+      <Stakes />
+      <OurApproach />
+      <WhoItsFor />
+      <WhyUs />
       <Contact />
       <About />
     </main>
