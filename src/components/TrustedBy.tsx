@@ -13,7 +13,20 @@ const TrustedBy: React.FC = () => {
   ];
 
   return (
-    <section id="trusted-by" className="py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-pure-white">
+    <section id="trusted-by" className="relative z-30 -mt-20 sm:-mt-24 pt-10 pb-12 sm:pt-12 sm:pb-14 lg:pt-14 lg:pb-16 px-4 sm:px-6 lg:px-8 bg-pure-white">
+      {/* Wave top edge */}
+      <svg
+        className="absolute top-0 left-0 w-full -translate-y-[calc(100%-1px)]"
+        viewBox="0 0 1440 48"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 48H1440V18C1440 18 1320 0 1080 6C840 12 720 30 480 27C240 24 120 9 0 15V48Z"
+          fill="white"
+        />
+      </svg>
       <div className="container-custom">
         <div className="text-center mb-8">
           <span className="text-navy-black/35 text-xs font-medium tracking-[0.2em] uppercase">

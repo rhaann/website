@@ -12,11 +12,13 @@ import CaseStudyDetail from './pages/CaseStudyDetail';
 import ArticlesPage from './pages/ArticlesPage';
 import ArticleDetail from './pages/ArticleDetail';
 import ScrollToTop from './components/ScrollToTop';
-import About from './components/About';
+import AboutPage from './pages/AboutPage';
 import Problem from './components/Problem';
-import Stakes from './components/Stakes';
+import Reframe from './components/Reframe';
 // import HowItWorks from './components/HowItWorks';
+import Outcomes from './components/Outcomes';
 import WhoItsFor from './components/WhoItsFor';
+import CaseStudies from './components/CaseStudies';
 import WhyUs from './components/WhyUs';
 
 function HomePage() {
@@ -25,12 +27,13 @@ function HomePage() {
       <Hero />
       <TrustedBy />
       <Problem />
-      <Stakes />
+      <Reframe />
       <OurApproach />
+      <Outcomes />
       <WhoItsFor />
+      <CaseStudies />
       <WhyUs />
       <Contact />
-      <About />
     </main>
   );
 }
@@ -58,6 +61,7 @@ function App() {
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <Footer />
       </div>

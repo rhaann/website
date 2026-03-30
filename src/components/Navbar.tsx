@@ -11,6 +11,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isInnerPage = location.pathname !== '/';
+  const showScrolled = isScrolled || isInnerPage;
+
   const navItems = [
     { name: 'The Problem', href: '#problem' },
     { name: 'The Solution', href: '#ourApproach' },
@@ -18,7 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'Why Us', href: '#whyUs' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Articles', href: '/articles' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -43,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        showScrolled
           ? 'bg-pure-white/95 backdrop-blur-md shadow-sm border-b border-sharp-orange-light'
           : 'bg-transparent'
       }`}
@@ -59,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               animate={{ scale: [1, 1.12, 1] }}
               transition={{ duration: 0.4, ease: ['easeOut', 'easeIn'], repeat: Infinity, repeatDelay: 4.6 }}
             />
-            <h1 className="logo-text">actual insight</h1>
+            <h1 className={`text-xl font-bold transition-colors duration-300 ${showScrolled ? 'text-navy-black' : 'text-white'}`}>actual insight</h1>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -67,17 +69,27 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="nav-link text-sm lg:text-base"
+                className={`text-sm lg:text-base font-medium transition-colors duration-300 ${
+                  showScrolled
+                    ? 'text-navy-black/80 hover:text-navy-black'
+                    : 'text-white/80 hover:text-white'
+                }`}
               >
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={() => handleNavClick('#contact')}
+              className={`px-6 py-2.5 font-semibold rounded-full text-sm lg:text-base transition-all duration-300 hover:shadow-lg hover:scale-105 ${showScrolled ? 'bg-sky-blue text-white' : 'bg-white text-navy-black'}`}
+            >
+              Get Started
+            </button>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-navy-black hover:text-navy-black/70 transition-colors duration-200"
+              className={`p-2 transition-colors duration-300 ${showScrolled ? 'text-navy-black hover:text-navy-black/70' : 'text-white hover:text-white/70'}`}
             >
               <svg
                 className="w-6 h-6"
@@ -112,11 +124,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="block w-full text-left nav-link py-3 text-base border-b border-grey-lighter/50 last:border-b-0"
+                  className="block w-full text-left nav-link py-3 text-base border-b border-grey-lighter/50"
                 >
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => handleNavClick('#contact')}
+                className="block w-full mt-2 px-6 py-3 bg-navy-black text-white font-semibold rounded-full text-base transition-all duration-300 hover:bg-navy-black/90"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         )}
