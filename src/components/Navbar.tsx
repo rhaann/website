@@ -14,14 +14,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const isInnerPage = location.pathname !== '/';
   const showScrolled = isScrolled || isInnerPage;
 
-  const navItems = [
-    { name: 'The Problem', href: '#problem' },
-    { name: 'The Solution', href: '#ourApproach' },
-    { name: 'Who It\'s For', href: '#whoItsFor' },
-    { name: 'Why Us', href: '#whyUs' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Articles', href: '/articles' },
-  ];
+  // const navItems = [
+  //   { name: 'The Problem', href: '#problem' },
+  //   { name: 'The Solution', href: '#ourApproach' },
+  //   { name: 'Who It\'s For', href: '#whoItsFor' },
+  //   { name: 'Why Us', href: '#whyUs' },
+  //   { name: 'Case Studies', href: '/case-studies' },
+  //   { name: 'Articles', href: '/articles' },
+  // ];
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);

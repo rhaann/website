@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const nav = [
-    { label: 'About', href: '/about' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Articles', href: '/articles' },
-    { label: 'Contact', href: '/#contact' },
-  ];
+  // const nav = [
+  //   { label: 'About', href: '/about' },
+  //   { label: 'Case Studies', href: '/case-studies' },
+  //   { label: 'Articles', href: '/articles' },
+  //   { label: 'Contact', href: '/#contact' },
+  // ];
 
   return (
     <footer className="relative z-10 bg-navy-black text-pure-white -mt-12 sm:-mt-14 pt-2">
