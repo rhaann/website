@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 /** Clarity session — opens Calendly in a new tab */
-const CALENDLY_CLARITY_URL = 'https://calendly.com/actualinsight/clarity-session';
+const CALENDLY_CLARITY_URL = 'https://calendly.com/alex-actualinsight/30min';
 
 const Contact: React.FC = () => {
   const bullets = [
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
       className="bg-white pt-10 sm:pt-12 lg:pt-16 pb-28 sm:pb-32 lg:pb-36"
     >
       <div className="container-custom">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
           {/* Left — all copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
               Contact
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] xl:text-[2.75rem] font-extrabold text-navy-black leading-[1.12] mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-navy-black leading-[1.5] mb-6">
               Let&apos;s get clear on where AI is worth your time.
             </h2>
 
@@ -63,19 +63,12 @@ const Contact: React.FC = () => {
           >
             <div className="flex flex-row items-center justify-between gap-4 w-full max-w-xl lg:max-w-none rounded-full border border-navy-black/10 bg-navy-black/[0.03] pl-4 sm:pl-6 pr-2 py-2.5">
               <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                <div className="flex shrink-0 -space-x-2">
-                  <div
-                    className="w-10 h-10 rounded-full border-2 border-white bg-navy-black flex items-center justify-center text-xs font-bold text-white shadow-sm"
-                    aria-hidden
-                  >
-                    AM
-                  </div>
-                  <div
-                    className="w-10 h-10 rounded-full border-2 border-white bg-navy-black/25 flex items-center justify-center text-xs font-bold text-white shadow-sm"
-                    aria-hidden
-                  >
-                    RH
-                  </div>
+                <div className="shrink-0">
+                  <img
+                    src="/Alex.jpeg"
+                    alt="Alex Morton"
+                    className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
+                  />
                 </div>
                 <p className="text-navy-black text-sm sm:text-base font-medium leading-snug">
                   Book a call with Actual Insight

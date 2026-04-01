@@ -64,18 +64,20 @@ const Hero: React.FC = () => {
 
             {/* CTAs */}
             <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out ${showDifferent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <motion.button
+              <motion.a
+                href="https://calendly.com/alex-actualinsight/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-sky-blue hover:bg-sky-blue/90 text-white font-medium text-base px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Book an Intro Call
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('ourApproach')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-sky-blue font-medium text-base px-7 py-3.5 rounded-full border-2 border-sky-blue hover:bg-sky-blue hover:text-white transition-all duration-200"
               >
                 See How It Works

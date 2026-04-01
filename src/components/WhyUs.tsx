@@ -38,7 +38,7 @@ const WhyUs: React.FC = () => {
 
   return (
     <section id="whyUs" className="relative bg-white overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[360px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] min-h-[280px]">
 
         {/* Left — animated visual */}
         <div className="relative bg-navy-black overflow-hidden flex items-center justify-center min-h-[220px] lg:min-h-0">
@@ -176,7 +176,7 @@ const WhyUs: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
-          className="py-10 sm:py-12 lg:py-14 px-6 sm:px-10 lg:px-14 xl:px-20"
+          className="py-8 sm:py-10 lg:py-10 px-6 sm:px-10 lg:px-14 xl:px-20"
         >
           <motion.span
             variants={fadeUp}
@@ -188,7 +188,7 @@ const WhyUs: React.FC = () => {
 
           <motion.h2
             variants={fadeUp}
-            className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold leading-[1.1] mb-8"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold leading-[1.5] mb-8"
           >
             <span className="text-sky-blue">Built from</span>
             <span className="text-navy-black"> real-world experience.</span>
@@ -218,15 +218,15 @@ const WhyUs: React.FC = () => {
               variants={fadeUp}
               className="flex flex-col items-center shrink-0 pt-1"
             >
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-navy-black/6 border-2 border-sky-blue/25 overflow-hidden mb-4">
+              <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-navy-black/6 border-2 border-sky-blue/25 overflow-hidden mb-4">
                 <img src="/Alex.jpeg" alt="Alex Morton" className="w-full h-full object-cover" />
               </div>
-              <Link
+              {/* <Link
                 to="/about"
                 className="inline-flex items-center justify-center px-6 py-3 bg-sky-blue text-white font-semibold rounded-full text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
               >
                 Meet the Team
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
         </motion.div>

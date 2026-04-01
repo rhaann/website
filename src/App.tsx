@@ -18,7 +18,7 @@ import Reframe from './components/Reframe';
 // import HowItWorks from './components/HowItWorks';
 import Outcomes from './components/Outcomes';
 import WhoItsFor from './components/WhoItsFor';
-import CaseStudies from './components/CaseStudies';
+// import CaseStudies from './components/CaseStudies';
 import WhyUs from './components/WhyUs';
 
 function HomePage() {
@@ -31,7 +31,7 @@ function HomePage() {
       <OurApproach />
       <Outcomes />
       <WhoItsFor />
-      <CaseStudies />
+      {/* <CaseStudies /> */}
       <WhyUs />
       <Contact />
     </main>

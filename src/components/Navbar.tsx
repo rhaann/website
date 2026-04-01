@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               >
                 {item.name}
               </button>
-            ))}
+            ))} */}
             <button
               onClick={() => handleNavClick('#contact')}
               className={`px-6 py-2.5 font-semibold rounded-full text-sm lg:text-base transition-all duration-300 hover:shadow-lg hover:scale-105 ${showScrolled ? 'bg-sky-blue text-white' : 'bg-white text-navy-black'}`}
@@ -120,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-pure-white border-t border-grey-lighter shadow-lg">
             <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
+              {/* {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 >
                   {item.name}
                 </button>
-              ))}
+              ))} */}
               <button
                 onClick={() => handleNavClick('#contact')}
                 className="block w-full mt-2 px-6 py-3 bg-navy-black text-white font-semibold rounded-full text-base transition-all duration-300 hover:bg-navy-black/90"

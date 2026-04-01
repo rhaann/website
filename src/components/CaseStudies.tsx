@@ -30,7 +30,7 @@ const CaseStudies: React.FC = () => {
   return (
     <section id="case-studies" className="py-20 sm:py-24 lg:py-32 bg-white overflow-hidden">
       <div className="container-custom">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
           <motion.div
             initial="hidden"

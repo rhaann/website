@@ -14,7 +14,7 @@ const OurApproach: React.FC = () => {
 
   const steps = [
     {
-      num: '01',
+      stepLabel: 'Step 1',
       title: 'Get Clarity',
       text: 'We analyze your workflows, data, and economics to pinpoint high-impact opportunities.',
       label: 'Diagnose',
@@ -26,7 +26,7 @@ const OurApproach: React.FC = () => {
       ],
     },
     {
-      num: '02',
+      stepLabel: 'Step 2',
       title: 'Build Your Blueprint',
       text: 'We quantify opportunity and create an actionable roadmap, so your team can focus on the few initiatives that will drive ROI.',
       label: 'Prioritize',
@@ -38,12 +38,12 @@ const OurApproach: React.FC = () => {
       ],
     },
     {
-      num: '03',
+      stepLabel: 'Step 3',
       title: 'Execute with Confidence',
       text: 'We support your team as you implement - without creating dependency.',
       label: 'Implement',
       bullets: [
-        'Hands-on support through first deployment',
+        'Hands-on support through deployment',
         'Knowledge transfer to your internal team',
         'Measure results against projected ROI',
         'Iterate and scale what\u2019s working',
@@ -54,9 +54,9 @@ const OurApproach: React.FC = () => {
   const [flipped, setFlipped] = useState<number | null>(null);
 
   return (
-    <section id="ourApproach" className="bg-[#e8f1fb] py-20 sm:py-24 lg:py-32">
+    <section id="ourApproach" className="bg-navy-black py-20 sm:py-24 lg:py-32">
       <div className="container-custom">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
           <motion.div
             initial="hidden"
@@ -70,11 +70,14 @@ const OurApproach: React.FC = () => {
                 <span className="w-8 h-px bg-sharp-orange/40" />
                 How We Work
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-navy-black leading-[1.15] mb-5 max-w-2xl">
-                A structured path from AI uncertainty to{' '}
-                <span className="text-sky-blue font-bold">execution.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white leading-[1.5] mb-5 max-w-4xl">
+                <span className="text-sky-blue">The Actual Insight Catalyst</span>
+                <span className="text-white mx-1.5 sm:mx-2">-</span>
+                <span className="text-white">
+                  A structured path from AI uncertainty to execution
+                </span>
               </h2>
-              <p className="text-navy-black/55 text-base sm:text-lg leading-relaxed max-w-2xl">
+              <p className="text-white/45 text-base sm:text-lg leading-relaxed max-w-2xl">
                 We built a structured approach to take you from AI uncertainty to confident
                 execution - without wasted time, wasted spend, or dependency.
               </p>
@@ -87,9 +90,9 @@ const OurApproach: React.FC = () => {
             >
               {steps.map((s, i) => (
                 <motion.div
-                  key={s.num}
+                  key={s.stepLabel}
                   variants={fadeUp}
-                  className="border-r last:border-r-0 border-navy-black/10 border-b md:border-b-0"
+                  className="border-r last:border-r-0 border-sharp-orange/25 border-b md:border-b-0"
                   style={{ perspective: '1000px' }}
                   onMouseEnter={() => setFlipped(i)}
                   onMouseLeave={() => setFlipped(null)}
@@ -103,45 +106,51 @@ const OurApproach: React.FC = () => {
                   >
                     {/* Front */}
                     <div
-                      className="absolute inset-0 p-8 sm:p-10 flex flex-col"
+                      className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-between"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
-                      <div className="flex items-center gap-4 mb-8">
-                        <span className="text-sky-blue text-sm font-bold">{s.num}</span>
-                        <div className="flex-1 h-px bg-navy-black/10" />
+                      <div>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-sky-blue text-base sm:text-lg font-bold whitespace-nowrap">
+                            {s.stepLabel}
+                          </span>
+                          <div className="flex-1 h-px bg-sharp-orange/30" />
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
+                          {s.title}
+                        </h3>
+                        <p className="text-white/45 text-base leading-relaxed">
+                          {s.text}
+                        </p>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-navy-black mb-4 leading-snug">
-                        {s.title}
-                      </h3>
-                      <p className="text-navy-black/50 text-base leading-relaxed flex-1 mb-6">
-                        {s.text}
-                      </p>
-                      <span className="inline-flex items-center gap-2 text-navy-black/35 text-xs font-medium tracking-[0.15em] uppercase mt-auto">
-                        <span className="w-5 h-px bg-navy-black/20" />
+                      <span className="inline-flex items-center gap-2 text-white/25 text-xs font-medium tracking-[0.15em] uppercase">
+                        <span className="w-5 h-px bg-white/15" />
                         {s.label}
                       </span>
                     </div>
 
                     {/* Back */}
                     <div
-                      className="absolute inset-0 p-8 sm:p-10 flex flex-col bg-navy-black rounded-lg"
+                      className="absolute inset-0 p-8 sm:p-10 flex flex-col bg-sky-blue rounded-lg"
                       style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)',
                       }}
                     >
                       <div className="flex items-center gap-4 mb-5">
-                        <span className="text-sky-blue text-sm font-bold">{s.num}</span>
-                        <div className="flex-1 h-px bg-white/10" />
+                        <span className="text-white text-base sm:text-lg font-bold whitespace-nowrap">
+                          {s.stepLabel}
+                        </span>
+                        <div className="flex-1 h-px bg-white/20" />
                       </div>
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-5 leading-snug">
                         {s.title}
                       </h3>
-                      <ul className="space-y-3.5 flex-1">
+                      <ul className="space-y-2 flex-1">
                         {s.bullets.map((b) => (
                           <li key={b} className="flex items-start gap-3">
-                            <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-sky-blue" />
-                            <span className="text-white/70 text-sm leading-relaxed">{b}</span>
+                            <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+                            <span className="text-white text-sm leading-relaxed">{b}</span>
                           </li>
                         ))}
                       </ul>
@@ -158,19 +167,14 @@ const OurApproach: React.FC = () => {
             {/* Bottom CTA strip */}
             <motion.div
               variants={fadeUp}
-              className="border-t border-navy-black/10 pt-10 md:pt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+              className="border-t border-sharp-orange/25 pt-10 md:pt-12 flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6"
             >
-              <div>
-                <span className="text-navy-black/40 text-xs font-semibold tracking-[0.15em] uppercase block mb-1">
-                  The Actual Insight Catalyst
-                </span>
-                <p className="text-navy-black/50 text-sm sm:text-base">
-                  No wasted time. No wasted spend. No dependency.
-                </p>
-              </div>
+              
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-navy-black text-white font-semibold rounded-full text-base hover:shadow-lg hover:scale-105 transition-all duration-300 shrink-0"
+                href="https://calendly.com/alex-actualinsight/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-sky-blue text-white font-semibold rounded-full text-base hover:shadow-lg hover:scale-105 transition-all duration-300 shrink-0"
               >
                 Book Your Intro Call
                 <span>→</span>
