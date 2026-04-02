@@ -49,9 +49,6 @@ const Reframe: React.FC = () => {
                 In most businesses, a small number of workflows drive the majority of impact.
                 The opportunity is concentrated - but most teams never find it.
               </p>
-              <p className="text-navy-black/55 text-lg sm:text-xl leading-relaxed">
-                Instead, they spread thin. They chase tools. They build things that don't compound.
-              </p>
             </div>
 
             {/* Right — numbered list */}
@@ -63,9 +60,7 @@ const Reframe: React.FC = () => {
                     i < problems.length - 1 ? 'border-b border-navy-black/10' : ''
                   }`}
                 >
-                  <span className="text-sharp-orange/60 text-sm font-semibold mt-0.5 shrink-0">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                  <span className="mt-2.5 w-2 h-2 rounded-full bg-sharp-orange/60 shrink-0" />
                   <p className="text-navy-black/65 text-base sm:text-lg leading-relaxed font-medium">
                     {item}
                   </p>

@@ -63,15 +63,22 @@ const Contact: React.FC = () => {
           >
             <div className="flex flex-row items-center justify-between gap-4 w-full max-w-xl lg:max-w-none rounded-full border border-navy-black/10 bg-navy-black/[0.03] pl-4 sm:pl-6 pr-2 py-2.5">
               <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                <div className="shrink-0">
+                <div className="flex shrink-0 -space-x-2">
                   <img
                     src="/Alex.jpeg"
                     alt="Alex Morton"
                     className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
                   />
+                  <div className="w-10 h-10 rounded-full border-2 border-white shadow-sm overflow-hidden">
+                    <img
+                      src="/ruj.png"
+                      alt=""
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </div>
                 <p className="text-navy-black text-sm sm:text-base font-medium leading-snug">
-                  Book a call with Actual Insight
+                  Let's connect
                 </p>
               </div>
 

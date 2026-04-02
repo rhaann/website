@@ -54,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center space-x-3">
             <motion.img
-              src="/logo_dark.svg"
+              src={showScrolled ? '/logo_dark.svg' : '/logo_light.svg'}
               alt="Actual Insight Logo"
               className="w-8 h-8"
               initial={{ scale: 1 }}

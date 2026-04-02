@@ -41,7 +41,7 @@ const Outcomes: React.FC = () => {
                   <span className="w-8 h-px bg-sharp-orange/40" />
                   Outcomes
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-navy-black leading-[1.5]">
+                <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-navy-black leading-[1.5] whitespace-nowrap">
                   What you walk away with
                 </h2>
               </motion.div>

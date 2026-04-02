@@ -20,8 +20,13 @@ const Problem: React.FC = () => {
   ];
 
   return (
-    <section id="problem" className="bg-[#f8fbff] pt-20 sm:pt-24 lg:pt-32 pb-10 sm:pb-12 lg:pb-14">
-      <div className="container-custom">
+    <section id="problem" className="relative bg-[#f8fbff] pt-20 sm:pt-24 lg:pt-32 pb-10 sm:pb-12 lg:pb-14 overflow-hidden">
+      {/* Blue gradient from top-right */}
+      <div
+        className="absolute top-0 right-0 w-[50%] h-[60%] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at top right, rgba(0,144,255,0.08) 0%, transparent 70%)' }}
+      />
+      <div className="container-custom relative">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -39,52 +44,24 @@ const Problem: React.FC = () => {
             <span className="text-sky-blue">Your business isn't.</span>
           </motion.h2>
 
-          {/* 2x2 grid of pain points */}
-          <motion.div
-            variants={fadeUp}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-0 mb-16 md:mb-20"
-          >
+          {/* Bullet points */}
+          <motion.ul variants={stagger} className="mb-16 md:mb-20">
             {painPoints.map((point, i) => (
-              <div
+              <motion.li
                 key={i}
-                className={`p-6 sm:p-8 flex items-start gap-4 ${
-                  i < 2 ? 'border-b border-navy-black/15' : ''
-                } ${i % 2 === 0 ? 'sm:border-r sm:border-navy-black/15' : ''}`}
+                variants={fadeUp}
+                className={`flex items-start gap-4 py-5 ${
+                  i < painPoints.length - 1 ? 'border-b border-navy-black/10' : ''
+                }`}
               >
-                <span className="text-sharp-orange/70 text-sm font-semibold mt-0.5 shrink-0">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="text-navy-black/65 text-base sm:text-lg leading-relaxed font-medium">
+                <span className="mt-2.5 w-2 h-2 rounded-full bg-sharp-orange/60 shrink-0" />
+                <p className="text-navy-black/65 text-lg sm:text-xl leading-relaxed font-medium">
                   {point}
                 </p>
-              </div>
+              </motion.li>
             ))}
-          </motion.div>
+          </motion.ul>
 
-          {/* Divider with label */}
-          <motion.div variants={fadeUp} className="flex items-center gap-4 mb-10 md:mb-12">
-            <div className="flex-1 h-px bg-navy-black/10" />
-            <span className="text-navy-black/30 text-[11px] font-semibold tracking-[0.2em] uppercase">
-              The Real Issue
-            </span>
-            <div className="flex-1 h-px bg-navy-black/10" />
-          </motion.div>
-
-          {/* Bottom statement */}
-          <motion.div
-            variants={fadeUp}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-12 md:mb-14"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-1 self-stretch bg-sharp-orange rounded-full shrink-0" />
-              <p className="text-navy-black/70 text-lg sm:text-xl font-medium leading-snug">
-                The issue isn't effort.
-              </p>
-            </div>
-            <p className="text-navy-black text-xl sm:text-2xl font-bold leading-snug">
-              It's knowing where AI will actually make a difference.
-            </p>
-          </motion.div>
 
           
         </motion.div>
