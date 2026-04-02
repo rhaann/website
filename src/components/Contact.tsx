@@ -71,14 +71,14 @@ const Contact: React.FC = () => {
                   />
                   <div className="w-10 h-10 rounded-full border-2 border-white shadow-sm overflow-hidden">
                     <img
-                      src="/ruj.png"
+                      src="/Ruj.png"
                       alt=""
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>
                 <p className="text-navy-black text-sm sm:text-base font-medium leading-snug">
-                  Let's connect
+                  Let's connect!
                 </p>
               </div>
 
